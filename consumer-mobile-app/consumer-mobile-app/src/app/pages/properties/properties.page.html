@@ -4,26 +4,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content>
   <h1>Listings</h1>
 
 
   <ion-list *ngFor="let listing of listing">
-    <ion-item>
+    <ion-grid>
       <ion-card>
         <ion-img style="width: 300px; height: 200px" src= {{listing.imgUrl}}></ion-img>
-        <ion-label>{{listing.name}}</ion-label>
+        <ion-card-header>{{listing.name}}</ion-card-header>
         <ion-card-content>
           {{listing.location}} <br>
           Price: {{listing.price}}
         </ion-card-content>
       </ion-card>
-    </ion-item>
+    </ion-grid>
   </ion-list>
 
 
-
+  
   <!-- Tab Bar -->
     <ion-tabs>
         <ion-tab-bar slot="bottom">

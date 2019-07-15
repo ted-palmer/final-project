@@ -1,0 +1,75 @@
+{
+    "users":[
+      {
+        "id":"1",
+        "name":"Byron",
+        "surname":"de Villiers",
+        "cellPhone":"0829123465",
+        "email":"byron@mail.com",
+        "password":"P@ssword",
+        "role":"host"
+      },
+
+      {
+        "id":"2",
+        "name":"Ted",
+        "surname":"Palmer",
+        "cellPhone":"12345678",
+        "email":"ted@mail.com",
+        "password":"P@ssword",
+        "role":"user"
+      }
+    ],
+
+
+
+    "listings":[
+      {
+        "hostID":"1",
+        "name":"House1",
+        "location":"Lisbon",
+        "price":"300",
+        "imgURL":"https://www.everysteph.com/wp-content/uploads/2019/01/things-to-do-in-lisbon-featured-1440x1000.jpg"
+       
+      },
+
+      {
+        "hostID":"2",
+        "name":"House2",
+        "location":"Cape Town",
+        "price":"250",
+        "imgURL":"https://media.cntraveler.com/photos/5cb6012b3bf1dc6733de9a8f/4:3/w_480,c_limit/Cape-Town_GettyImages-92153774.jpg"
+       
+      }
+    ],
+
+
+    "bookings":[
+      {
+        "startDate":"7.15.19",
+        "endDate":"7.18.19",
+        "listingID":"1",
+        "userID":"1",
+        "status":"rejected"
+      },
+
+      {
+        "startDate":"7.21.19",
+        "endDate":"7.26.19",
+        "listingID":"2",
+        "userID":"2",
+        "status":"pending"
+      },
+
+      {
+        "startDate":"8.17.19",
+        "endDate":"8.26.19",
+        "listingID":"3",
+        "userID":"2",
+        "status":"accepted"
+      }
+    ]
+
+
+
+  }
