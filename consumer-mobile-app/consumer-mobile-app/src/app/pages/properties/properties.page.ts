@@ -21,8 +21,8 @@ export class PropertiesPage implements OnInit {
     });
   }
 
-  backToLogin(){
-    this.navCtrl.navigateForward('login');
+  goToBookings(){
+    this.navCtrl.navigateForward('bookings');
   }
 
   goToUser(){

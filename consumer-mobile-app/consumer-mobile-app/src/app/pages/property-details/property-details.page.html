@@ -18,6 +18,15 @@
       <h2>{{displayListing.location}}</h2>
       <h3>${{displayListing.pricePerNight}} per night</h3>
       <p>{{displayListing.description}}</p>
+        <ion-item center expand=full>
+          <ion-input type="text" placeholder="Start Date" [(ngModel)] = "booking.dateStart"></ion-input> <br>
+        </ion-item>
+        <ion-item center expand=full>
+          <ion-input type="text" placeholder="End Date" [(ngModel)] = "booking.dateEnd"></ion-input> <br>
+        </ion-item>
+        <ion-item center expand=full>
+        <ion-button center expand=full color=danger (click)="addBooking()">Add Booking</ion-button>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 
@@ -35,9 +44,9 @@
         <ion-label>Listings</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="login" (click)="backToLogin()">
-        <ion-icon name="people"></ion-icon>
-        <ion-label>Login</ion-label>
+      <ion-tab-button tab="bookings" (click)="goToBookings()">
+        <ion-icon name="book"></ion-icon>
+        <ion-label>Bookings</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>

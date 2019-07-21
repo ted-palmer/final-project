@@ -12,25 +12,24 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-input type="text" placeholder="First Name" [(ngModel)] = "user.firstname" ></ion-input>
+        <ion-input type="text" placeholder="First Name" [(ngModel)]="addUser.name"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" placeholder="Last Name" [(ngModel)] = "user.lastname"></ion-input>
+        <ion-input type="text" placeholder="Last Name" [(ngModel)]="addUser.surname"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-input type="text" placeholder="Choose an Email" [(ngModel)] = "user.email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input type="text" placeholder="Choose a Password" type="password" [(ngModel)] = "user.password"></ion-input>
-        </ion-item>
+        <ion-input type="text" placeholder="Email" [(ngModel)]="addUser.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Password" type="password" [(ngModel)]="addUser.password"></ion-input>
+      </ion-item>
+      <br>
       <div>
-        <ul style="list-style: none;">
-            <li><ion-button size="medium" expand="block" color="danger" (click)="register(user)">Register</ion-button></li>
-            <li><ion-button size="medium" expand="block" color="danger" (click)="alreadyHaveAccount()">I already have an account</ion-button></li>
-        </ul>
+        <ion-button center expand=full color="danger" (click)="registerNewUser(addUser)">Register</ion-button>
+        <ion-button center expand=full color="danger" (click)="alreadyHaveAccount()">I already have an account</ion-button>
       </div>
-  </ion-card-content>
+    </ion-card-content>
 
   </ion-card>
-  
+
 </ion-content>

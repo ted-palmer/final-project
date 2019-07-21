@@ -17,8 +17,8 @@ export class UserPage implements OnInit {
     this.username = this.navUser.getUsername();
   }
 
-  backToLogin(){
-    this.navCtrl.navigateForward('login');
+  goToBookings(){
+    this.navCtrl.navigateForward('bookings');
   }
 
   goToProperties(){

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { NavUserService } from '../../services/nav-user.service'
+import { User } from '../../models/user.model'
+import { AuthService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-home',
@@ -9,13 +11,14 @@ import { NavUserService } from '../../services/nav-user.service'
 })
 export class LoginPage {
 
-  username: string;
+  public loginUser: User = new User();
 
-  constructor(private navCtrl: NavController, private navUser: NavUserService) {}
+ 
+  constructor(private navCtrl: NavController, private authService: AuthService) {}
 
 
-login() {
-  this.navUser.setUsername(this.username)
+login(loginUser) {
+  this.authService.loginUser(loginUser).subscribe();
   this.navCtrl.navigateForward("user");
 
 }

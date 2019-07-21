@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { User } from '../../models/user.model'
+import { AuthService } from '../../services/auth.service'
+
 
 @Component({
   selector: 'app-registration',
@@ -9,18 +11,20 @@ import { User } from '../../models/user.model'
 })
 export class RegistrationPage implements OnInit {
 
-  public user: User = new User();
-  public newUserId: any;
-  public userid;
+  public addUser: User = new User();
+  public existingUser: User = new User();
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
 
   registerNewUser(){
-    this.navCtrl.navigateForward("user");
+    this.authService.registerUser(this.addUser).subscribe();
+    console.log(this.addUser);
+    //navigate forward
+    //this.navCtrl.navigateForward("user");
   }
 
   alreadyHaveAccount(){
