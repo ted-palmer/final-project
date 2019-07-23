@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-title>
+    Login Page
+  </ion-title>
+</ion-header>
+
+
+<ion-content class="ion-content">
+<ion-card class="ion-card">
+  <ion-card-header>
+    <ion-card-title>Login Information</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-input type="text" placeholder="Username" [(ngModel)] = "email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Password" type="password" [(ngModel)] = "password"></ion-input>
+    </ion-item>
+    <div>
+      <ion-button size="medium" expand="block" color="danger" (click)="login()">Login</ion-button>
+      <ion-button size="medium" expand="block" color="danger" (click)="register()">Register</ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>
+</ion-content>

@@ -173,7 +173,7 @@ findUserByRole(userRole)
                         if (err) {
                           reject(err);
                         }
-                        resolve(res);
+                        resolve(userReq);
                     });
                 }
                 else {

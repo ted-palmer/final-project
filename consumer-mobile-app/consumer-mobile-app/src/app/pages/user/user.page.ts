@@ -12,14 +12,20 @@ import { AuthService } from '../../services/auth.service'
 export class UserPage implements OnInit {
 
   public displayUser: User = new User;
+  public email: string;
 
-  constructor(private navCtrl: NavController, private authService: AuthService) { }
+  constructor(private navCtrl: NavController, private authService: AuthService) { 
+    // this.email = this.authService.getGlobalEmail();
+    // console.log(this.email);
+    // this.authService.getUserByEmail(this.authService.globalEmail).subscribe((response) => {
+    //   this.authService.setUser(response);
+  // });
+  }
 
 
   ngOnInit() {
     this.displayUser = this.authService.getUser();
     console.log(this.displayUser);
-
   }
 
   goToBookings(){

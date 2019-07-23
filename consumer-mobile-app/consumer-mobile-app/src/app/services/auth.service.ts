@@ -11,13 +11,45 @@ export class AuthService {
   //existingUser: User;
   public user: User;
   private isLoggedIn: Boolean = false;
+  public input: string
+  public globalEmail: string;
 
   constructor(private http: HttpClient) { }
 
 
 
-registerUser(newUser){
-  return this.http.post('http://localhost:5000/api/auth/register', newUser);
+  // setGlobalEmail(email){
+  //   this.globalEmail = email;
+  // }
+
+  // getGlobalEmail(){
+  //   return this.globalEmail;
+  // }
+
+
+  getUserByEmail(email){
+    return this.http.get('http://localhost:5000/api/users/email/' + email);
+
+  }
+
+// registerUser(newUser){
+//   return this.http.post('http://localhost:5000/api/auth/register', newUser);
+// }
+
+// registerUser(user, callback){
+//   this.http.post('http://localhost:5000/api/auth/login', {user}).subscribe((response: Array<User>) => {
+//     console.log("response recieved by backend login: ", response);
+//     callback(response);
+    
+//   });
+// }
+
+registerUser(userToAdd, callback){
+  this.http.post('http://localhost:5000/api/auth/register', userToAdd).subscribe((response: Array<User>) => {
+    console.log("response recieved by backend register: ", response);
+    callback(response);
+    
+  });
 }
 
 // loginUser(email, password){
@@ -26,7 +58,7 @@ registerUser(newUser){
 
 login(email, password, callback){
   this.http.post('http://localhost:5000/api/auth/login', {email, password}).subscribe((response: Array<User>) => {
-    console.log("response recieved by backend login: ", response);
+  // console.log("response recieved by backend login: ", response);
     callback(response);
     
   });

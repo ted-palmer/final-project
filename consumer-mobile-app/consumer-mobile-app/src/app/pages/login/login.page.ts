@@ -20,30 +20,10 @@ export class LoginPage {
  
   constructor(private navCtrl: NavController, private authService: AuthService, private navUser: NavUserService, private bookingService: BookingService) {}
 
-//   login() {
-//     this.authService.loginUser(this.email, this.password).subscribe((response) => {
-//       if (response == true) {
-//         this.navUser.getUserByEmail(this.email).subscribe((response) => {
-//           this.user = response;
-          
-//           this.navUser.setUser(this.user);
-
-//           console.log(response);
-//           // this.navUser.setUser(response);
-//         });
-
-//         this.navCtrl.navigateForward('user');
-//       }
-//       else {
-//         alert("Username or Password is incorrect");
-//       }
-
-//     });
-// }
 
   login() {
     this.authService.login(this.email, this.password, (x) => {
-      console.log("x recieved: ", x);
+     // console.log("x recieved: ", x);
 
       if (x.length > 0) {
         this.status = true;
@@ -52,7 +32,7 @@ export class LoginPage {
         this.status = false;
         alert("Username or Password is incorrect");
       }
-      console.log("status recieved after getLogin() function was run: ", this.status)
+      //console.log("status recieved after getLogin() function was run: ", this.status)
       if (this.status == true) {
         this.authService.setUser(x[0]);
         this.bookingService.setUser();
@@ -63,8 +43,6 @@ export class LoginPage {
     });
 
   }
-
-
 
 
   register() {

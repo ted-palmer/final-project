@@ -13,10 +13,7 @@ export class NavUserService {
   constructor(private http: HttpClient) { }
 
   
-  getUserByEmail(input){
-    return this.http.get('http://localhost:5000/api/users/email/' + input);
-
-  }
+  
 
   // public setUser(user: any) {
   //   this.user = user;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Listing } from '../../models/listing.model'
 import { ListingService } from '../../services/listing.service'
+import { AuthService } from '../../services/auth.service'
 
 
 @Component({
@@ -13,12 +14,19 @@ export class PropertiesPage implements OnInit {
 
   listing: any;
 
-  constructor(private navCtrl: NavController, private listingService: ListingService) { }
+  constructor(private navCtrl: NavController, private listingService: ListingService, private authService: AuthService) { }
 
   ngOnInit() {
     this.listingService.getListings().subscribe((response) => {
       this.listing = response;
     });
+  //     console.log('Global Email: ' + this.authService.globalEmail)
+  //     this.authService.getUserByEmail(this.authService.globalEmail).subscribe((response) => {
+  //       console.log("Response:" + response)
+  //       this.authService.setUser(response);
+  //       console.log("Get user: " + this.authService.getUser())
+ 
+  // });
   }
 
   goToBookings(){
