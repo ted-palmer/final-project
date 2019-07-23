@@ -7,16 +7,87 @@
 <ion-content>
 <h1>My Bookings</h1>
 
-
 <h2>Pending Bookings</h2>
 
+<div class="center">
+<ion-grid>
+    <ion-row align-items-start>
+        <ion-col size="1" width-10 text-left no-border no-padding><b>Id</b></ion-col>
+        <ion-col size="1" width-10 text-left no-border no-padding><b>User Id</b></ion-col>
+        <ion-col size="1" width-10 text-left no-border no-padding><b>Listing</b></ion-col>
+        <ion-col size="1" width-10 text-left no-border no-padding><b>Host Id</b></ion-col>
+        <ion-col size="1" width-10 text-left no-border no-padding><b>Status</b></ion-col>
+        <ion-col size="1" width-10 text-left no-border no-padding><b>Start Date</b></ion-col>
+        <ion-col size="1" width-10 text-left no-border no-padding><b>End Date</b></ion-col>
+      </ion-row>
+  <ion-row wrap *ngFor="let booking of pending">
+    <ion-col size="1" width-10 text-left no-border no-padding>{{booking.id}}</ion-col>
+    <ion-col size="1" width-10 text-left no-border no-padding>{{booking.userId}}</ion-col>
+    <ion-col size="1" width-10 text-left no-border no-padding>{{booking.listingId}}</ion-col>
+    <ion-col size="1" width-10 text-left no-border no-padding>{{booking.hostId}}</ion-col>
+    <ion-col size="1" width-10 text-left no-border no-padding>{{booking.status}}</ion-col>
+    <ion-col size="1" width-10 text-left no-border no-padding>{{booking.dateStart}}</ion-col>
+    <ion-col size="1" width-10 text-left no-border no-padding>{{booking.dateEnd}}</ion-col>
+    <!-- <ion-col width-25> <button ion-button small color="danger" (click)="gotoDetails(res)"> Details</button></ion-col> -->
+  </ion-row>
+</ion-grid>
+</div>
 
+<br>
 
 <h2>Accepted Bookings</h2>
+<div class="center">
+  <ion-grid>
+    <ion-row align-items-start>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Id</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>User Id</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Listing</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Host Id</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Status</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Start Date</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>End Date</b></ion-col>
+    </ion-row>
+    <ion-row wrap *ngFor="let booking of accepted">
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.id}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.userId}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.listingId}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.hostId}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.status}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.dateStart}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.dateEnd}}</ion-col>
+      <!-- <ion-col width-25> <button ion-button small color="danger" (click)="gotoDetails(res)"> Details</button></ion-col> -->
+    </ion-row>
+  </ion-grid>
+</div>
 
-
+<br>
 
 <h2>Rejected Bookings</h2>
+<div class="center">
+  <ion-grid>
+    <ion-row align-items-start>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Id</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>User Id</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Listing</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Host Id</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Status</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>Start Date</b></ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding><b>End Date</b></ion-col>
+    </ion-row>
+    <ion-row wrap *ngFor="let booking of rejected">
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.id}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.userId}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.listingId}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.hostId}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.status}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.dateStart}}</ion-col>
+      <ion-col size="1" width-10 text-left no-border no-padding>{{booking.dateEnd}}</ion-col>
+      <!-- <ion-col width-25> <button ion-button small color="danger" (click)="gotoDetails(res)"> Details</button></ion-col> -->
+    </ion-row>
+  </ion-grid>
+</div>
+
+
 
   <!-- Tab bar -->
   <ion-tabs>

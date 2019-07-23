@@ -3,6 +3,8 @@ import { NavController } from '@ionic/angular';
 import { ListingService } from '../../services/listing.service';
 import { Listing } from '../../models/listing.model';
 import { Booking } from '../../models/booking'
+import { AuthService } from '../../services/auth.service'
+import { User } from '../../models/user.model'
 
 
 @Component({
@@ -14,11 +16,13 @@ export class PropertyDetailsPage implements OnInit {
 
   displayListing: Listing;
   booking: Booking = new Booking();
+  user: User;
 
-  constructor(private navCtrl: NavController, private listingService: ListingService) { }
+  constructor(private navCtrl: NavController, private listingService: ListingService, private authService: AuthService) { }
 
   ngOnInit() {
     this.displayListing = this.listingService.getDetailListing();
+    this.user = this.authService.getUser();
   }
 
   
@@ -39,8 +43,10 @@ export class PropertyDetailsPage implements OnInit {
   addBooking() {
     this.booking.listingId = this.displayListing.id;
     this.booking.hostId = this.displayListing.hostId;
+    this.booking.userId = this.user.id;
     console.log(this.booking);
     this.listingService.addBooking(this.booking).subscribe()
+    this.goToBookings();
   }
 
 

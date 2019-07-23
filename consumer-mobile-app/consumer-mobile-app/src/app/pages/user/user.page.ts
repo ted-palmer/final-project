@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { NavUserService } from '../../services/nav-user.service'
+import { User } from '../../models/user.model'
+import { AuthService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-user',
@@ -9,12 +11,16 @@ import { NavUserService } from '../../services/nav-user.service'
 })
 export class UserPage implements OnInit {
 
-  username: string; 
+  public displayUser: User = new User;
 
-  constructor(private navCtrl: NavController, private navUser: NavUserService) { }
+  constructor(private navCtrl: NavController, private authService: AuthService) { }
+
 
   ngOnInit() {
-    this.username = this.navUser.getUsername();
+    this.displayUser = this.authService.getUser();
+    console.log(this.displayUser);
+    console.log("worked");
+
   }
 
   goToBookings(){

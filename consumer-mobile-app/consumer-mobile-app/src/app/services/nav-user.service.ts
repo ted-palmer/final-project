@@ -1,18 +1,30 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavUserService {
-  private username: string;
 
-  constructor() { }
+  //public user: User;
+  public input: string;
 
-  public setUsername(username: string) {
-    this.username = username;
+  constructor(private http: HttpClient) { }
+
+  
+  getUserByEmail(input){
+    return this.http.get('http://localhost:5000/api/users/email/' + input);
+
   }
 
-  public getUsername(): string {
-    return this.username;
-  }
+  // public setUser(user: any) {
+  //   this.user = user;
+  // }
+
+  // public getUser(): User{
+  //   return this.user;
+  // }
+
+
 }

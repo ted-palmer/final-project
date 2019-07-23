@@ -12,7 +12,6 @@ import { AuthService } from '../../services/auth.service'
 export class RegistrationPage implements OnInit {
 
   public addUser: User = new User();
-  public existingUser: User = new User();
 
   constructor(private navCtrl: NavController, private authService: AuthService) { }
 

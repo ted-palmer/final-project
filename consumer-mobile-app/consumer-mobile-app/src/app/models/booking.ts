@@ -1,6 +1,6 @@
 export class Booking {
     public id: number;
-    public userId: number = 1;
+    public userId: number;
     public listingId: number;
     public hostId: number;
     public status: string = "pending";

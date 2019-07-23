@@ -8,7 +8,8 @@ import { User } from '../models/user.model'
 export class AuthService {
 
   newUser: User;
-  existingUser: User;
+  //existingUser: User;
+  public user: User;
 
   constructor(private http: HttpClient) { }
 
@@ -18,12 +19,25 @@ registerUser(newUser){
   return this.http.post('http://localhost:5000/api/auth/register', newUser);
 }
 
-loginUser(existingUser){
-  return this.http.post('http://localhost:5000/api/auth/login', existingUser);
+// loginUser(email, password){
+//   return this.http.post('http://localhost:5000/api/auth/login', {email: email, password: password});
+// }
+
+login(email, password, callback){
+  this.http.post('http://localhost:5000/api/auth/login', {email, password}).subscribe((response: Array<User>) => {
+    console.log("response recieved by backend login: ", response);
+    callback(response);
+  });
 }
 
 
+public setUser(user: any) {
+  this.user = user;
+}
 
+public getUser(): User{
+  return this.user;
+}
 
 
 }
