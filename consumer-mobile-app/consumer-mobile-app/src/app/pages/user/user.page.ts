@@ -19,7 +19,6 @@ export class UserPage implements OnInit {
   ngOnInit() {
     this.displayUser = this.authService.getUser();
     console.log(this.displayUser);
-    console.log("worked");
 
   }
 

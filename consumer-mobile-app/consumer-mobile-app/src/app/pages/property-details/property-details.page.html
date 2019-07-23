@@ -11,13 +11,13 @@
 {{displayListing.email}}
 {{displayListing.description}} -->
 
-  <ion-card style="width:500px">
+  <ion-card class="center" style="width:500px">
     <img src="https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large">
     <ion-card-content>
-      <h1>{{displayListing.title}}</h1>
-      <h2>{{displayListing.location}}</h2>
-      <h3>${{displayListing.pricePerNight}} per night</h3>
-      <p>{{displayListing.description}}</p>
+      <h1 class="black">{{displayListing.title}}</h1>
+      <h2 class="black">Location: {{displayListing.location}}</h2>
+      <h3 class="black">Price: ${{displayListing.pricePerNight}} per night</h3>
+      <p class="black"> Description: {{displayListing.description}}</p>
         <ion-item center expand=full>
           <ion-input type="text" placeholder="Start Date" [(ngModel)] = "booking.dateStart"></ion-input> <br>
         </ion-item>
@@ -34,17 +34,17 @@
   <!-- Tab Bar -->
   <ion-tabs class="fixed">
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="profile" (click)="goToUser()">
+      <ion-tab-button (click)="goToUser()">
         <ion-icon name="person"></ion-icon>
         <ion-label>Profile</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="listings" (click)="goToProperties()">
+      <ion-tab-button (click)="goToProperties()">
         <ion-icon name="globe"></ion-icon>
         <ion-label>Listings</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="bookings" (click)="goToBookings()">
+      <ion-tab-button (click)="goToBookings()">
         <ion-icon name="book"></ion-icon>
         <ion-label>Bookings</ion-label>
       </ion-tab-button>

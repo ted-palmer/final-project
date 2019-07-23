@@ -1,151 +1,83 @@
 const express = require('express');
-const fs = require("fs");
 const router = express.Router();
 
-const AuthService = require('../services/auth-service');
+const UserService = require('../services/user-service');
+const userServer = new UserService();
 
-const authServe = new AuthService();
+// with services we need asynchronous functions due to the nature of JavaScript runtime environment
+// Look at JavaScript concurrency model for more information
 
-authServe.authenticateUser
-
-// get all users
+// get all 
 router.get('/', (req,res) => {
-    fs.readFile("./src/data/data.json", (err,data) => {
-        if (err) { throw err; }
-        else if (data) {
-            let dataParsed = JSON.parse(data);
-            res.send(dataParsed.users);
-        }
+    // asynchronous function call structure 
+    userServer.findUsers().then(users => {
+        res.json(users);
+    }).catch(err => {
+        res.json(err);
     });
 });
 
 
-//get users with role
-router.get("/:role", (req, res) => {
-    fs.readFile("./src/data/data.json", function(err, data) {
-      if (err) throw err;
-      var parseData = JSON.parse(data);
-      const found = parseData.users.some(user => user.role === req.params.role);
-      if (found) {
-        res.json(parseData.users.filter(user => user.role === req.params.role));
-      } else {
-        res.status(400).json({ msg: "User not found" });
-      }
+//get by role
+router.get('/:role', (req,res) => {
+    // asynchronous function call structure 
+    userServer.findUserByRole(req.params.role).then(users => {
+        res.json(users);
+    }).catch(err => {
+        res.json(err);
     });
-  });
+});
 
-// //create
-// router.post('/create', (req,res) => {
-//     fs.readFile("./src/data/data.json", (err,data) => {
-//         if (err) { throw err; }
-//         else if (data) {
-//             let users = JSON.parse(data);
-//             const found = users.users.some(user => user.id === req.body.id);
-//             let userCount = users.users.length;
-//             if (!found) {
-                
-//                 let user = {
-//                     id: (users.users[userCount-1].id++).toString(),
-//                     name: req.body.name,
-//                     surname: req.body.surname,
-//                     cellPhone: req.body.cellPhone,
-//                     email: req.body.email,
-//                     password: req.body.password,
-//                     role: req.body.role
-//                 }
-//                 users.users.push(user);
+//get by email
+router.get('/email/:email', (req,res) => {
+    // asynchronous function call structure 
+    userServer.findUserByEmail(req.params.email).then(users => {
+        res.json(users);
+    }).catch(err => {
+        res.json(err);
+    });
+});
 
-//                 fs.writeFile("./src/data/data.json", JSON.stringify(users), (err) => {
-//                     res.send(err);
-//                 });
 
-//                 res.status(200).json(user.id);
-//             }  
-//             else {
-//                 res.send("user already exists");
-                
-//             }
-//         }
+
+
+
+
+//get user by email 
+
+
+
+
+
+
+
+// get by id
+// router.get('/:id', (req,res) => {
+//     // asynchronous function call structure 
+//     userServer.findUserById(req.params.id).then(user => {
+//         res.json(user);
+//     }).catch(err => {
+//         res.json(err);
 //     });
 // });
 
-// router.post("/create", (req, res) => {
-//     const user = req.body;
-//     fs.readFile("./src/data/data.json", function(err, data) {
-//       var error = false;
-//       var errMsg = "";
-//       if (err) {
-//         error = true;
-//         throw err;
-//       } else {
-//         var count = 0;
-  
-//         if (data.length > 0) {
-//           var parseData = JSON.parse(data);
-//           parseData.users.forEach(existingUser => {
-//             if (existingUser.email === user.email) {
-//               throw new Error("This email address already been used");
-//             }
-//             count++;
-//           });
-//         } else {
-//           parseData = {
-//             users: []
-//           };
-//         }
-  
-//         const newUser = {
-//           id: (count + 1).toString(),
-//           name: user.name,
-//           surname: user.surname,
-//           cellPhone: user.cellPhone,
-//           email: user.email,
-//           password: user.password,
-//           role: user.role
-//         };
-  
-//         parseData.users.push(newUser);
-//         fs.writeFile("./src/data/data.json", JSON.stringify(parseData), function(
-//           err
-//         ) {
-//           if (err) {
-//             error = true;
-//             throw err;
-//           }
-//           res.json(newUser);
-//         });
-//       }
-  
-//       if (error) {
-//         res.status(400).json({ msg: errMsg });
-//       } else {
-//         res.json(user);
-//       }
-//     });
-//   });
+//create
+router.post('/create', (req,res) => {
+    // asynchronous function call structure 
+    userServer.createUser(req.body).then(user => {
+        res.json(user);
+    }).catch(err => {
+        res.json(err);
+    });
+});
 
 //delete
 router.delete('/delete/:id', (req,res) => {
-    fs.readFile("./src/data/data.json", (err,data) => {
-        if (err) { throw err; }
-        else if (data) {
-            let users = JSON.parse(data);
-            const found = users.users.some(user => user.id === req.params.id);
-            if (found) {
-                users.users.splice(req.params.id-1,1);
-                console.log(users.users.length);
-
-                fs.writeFile("./src/data/data.json", JSON.stringify(users), (err) => {
-                    res.send(err);
-                });
-
-                res.status(200).json("user was deleted");
-            }  
-            else {
-                res.send("user doesn't exists");
-                
-            }
-        }
+    // asynchronous function call structure 
+    userServer.deleteUSer(req.params.id).then(user => {
+        res.json(user);
+    }).catch(err => {
+        res.json(err);
     });
 });
 

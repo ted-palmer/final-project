@@ -56,7 +56,8 @@ export class LoginPage {
       if (this.status == true) {
         this.authService.setUser(x[0]);
         this.bookingService.setUser();
-        this.navCtrl.navigateForward('user');
+        this.authService.setLoginStatusTrue();
+        this.navCtrl.navigateForward('properties');
       }
 
     });

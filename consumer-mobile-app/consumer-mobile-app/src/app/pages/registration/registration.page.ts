@@ -22,8 +22,7 @@ export class RegistrationPage implements OnInit {
   registerNewUser(){
     this.authService.registerUser(this.addUser).subscribe();
     console.log(this.addUser);
-    //navigate forward
-    //this.navCtrl.navigateForward("user");
+    this.navCtrl.navigateForward("properties");
   }
 
   alreadyHaveAccount(){

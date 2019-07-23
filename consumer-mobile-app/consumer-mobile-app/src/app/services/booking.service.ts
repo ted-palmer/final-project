@@ -11,6 +11,7 @@ import { AuthService } from '../services/auth.service'
 export class BookingService {
 
   user: User;
+ // addBookingCallback: Function;
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
@@ -33,6 +34,14 @@ export class BookingService {
     return this.http.get('http://localhost:5000/api/bookings/user/' + this.user.id + '/rejected');
 
   }
+
+  // setBookingCallback(addBooking: Function){
+  //   this.addBookingCallback = addBooking;
+  // }
+
+  // invokeBookingCallback(booking: Booking) {
+  //   this.addBookingCallback(booking);
+  // }
 
 
 
