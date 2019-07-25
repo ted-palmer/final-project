@@ -1,86 +1,26 @@
-# Rubric-file-structure
-File structure for iX Full stack Project 
-
-## Project Setup
-
-### Create Project Via CLI
-
-Navigate to the project file
-
-```bash
-cd Rubric-file-structure
-cd Admin Panel
-```
-Create project
-
-```bash
-ng new admin-panel
-```
-Do the same for projects:
-
-Consumer Mobile App
-
-```bash
-ionic start consumer-mobile-app
-```
-
-Provider Mobile App
-
-```bash
-ionic start provider-mobile-app
-```
-
-API
-
-Create file structure with server.js located in a folder called api
-
-```bash
-mkdir api
-cd api 
-npm init
-```
-
-### Project Structure 
-
-Generate a mark down table similar to the one in root directory of this project. The following website can be used to do https://www.tablesgenerator.com/markdown_tables or edit the Project File Structure.txt file in the root directory
-
-Only files included in this mark down table with be marked!
-
-Ensure that the files included in the mark down table related the sections specified in the table.
-
-Please include the mark down table in the README.md file in the root directory of the project.
-
-### Example of Project Structure 
-
-| PROJECT             | COMPONENT          | FILE NAMES                                                                                                                                                                              |
-|---------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Consumer mobile app | Login              | eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\pages\login & eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\providers\login               |
-| Consumer mobile app | Registration       | eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\pages\registration & eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\providers\registration |
-| Consumer mobile app | User Profile       | eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\pages\user & eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\providers\user                 |
-| Consumer mobile app | List of Properties | eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\pages\properties & eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\providers\properties     |
-| Provider mobile app | Login              | eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\pages\login & eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\providers\login               |
-| Provider mobile app | Registration       | eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\pages\registration & eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\providers\registration |
-| Provider mobile app | User Profile       | eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\pages\user & eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\providers\user                 |
-| Provider mobile app | List of Properties | eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\pages\properties & eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\providers\properties     |
-| Provider mobile app | List of Bookings   | eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\pages\bookings & eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\providers\bookings         |
-| Admin Panel         | Users              | eg. Rubric-file-structure\admin-panel\admin-panel\src\app\components\users & eg. Rubric-file-structure\admin-panel\admin-panel\src\app\services\users                                   |
-| Admin Panel         | Bookings           | eg. Rubric-file-structure\admin-panel\admin-panel\src\pages\bookings & eg. Rubric-file-structure\admin-panel\admin-panel\src\src\app\services\bookings                                  |
-| API                 | Users              | eg. Rubric-file-structure\API\api\src\pages\users & eg. Rubric-file-structure\api\api\provider-mobile-app\src\api\users                                                                 |
-| API                 | Bookings           | eg. Rubric-file-structure\API\api\src\pages\bookings & eg. Rubric-file-structure\api\api\provider-mobile-app\src\api\bookings                                                           |
-
-### Change Git Remote URL
-
-Create new repository on GitHub.
-
-Change the git URL associated with the project 
-
-```bash
-git remote set-url origin < new URL of your GitHub project (click 'Clone or download' button on GitHub site to see URL) >
-```
-
-Ensure that the git URL has been updated.
-
-```bash
-git remote -v
-```
+| Project             	| Component            	| Filename                                                                                                                                                                                                                                                                  	|
+|---------------------	|----------------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| Consumer mobile app 	| Login                	| final-project/consumer-mobile-app/consumer-mobile-app/src/app/pages/login & final-project/consumer-mobile-app/consumer-mobile-app/src/app/services/auth.service.ts                                                                                                        	|
+| Consumer mobile app 	| Register             	| final-project/consumer-mobile-app/consumer-mobile-app/src/app/pages/register & final-project/consumer-mobile-app/consumer-mobile-app/src/app/services/auth.service.ts                                                                                                     	|
+| Consumer mobile app 	| User Profile         	| final-project/consumer-mobile-app/consumer-mobile-app/src/app/pages/user & final-project/consumer-mobile-app/consumer-mobile-app/src/app/services/auth.service.ts                                                                                                         	|
+| Consumer mobile app 	| List of Properties   	| final-project/consumer-mobile-app/consumer-mobile-app/src/app/pages/properties & final-project/consumer-mobile-app/consumer-mobile-app/src/app/services/listing.service.ts                                                                                                	|
+| Consumer mobile app 	| Property Details     	| final-project/consumer-mobile-app/consumer-mobile-app/src/app/pages/property-details & final-project/consumer-mobile-app/consumer-mobile-app/src/app/services/listing.service.ts & final-project/consumer-mobile-app/consumer-mobile-app/src/app/services/auth.service.ts 	|
+| Consumer mobile app 	| Bookings             	| final-project/consumer-mobile-app/consumer-mobile-app/src/app/pages/bookings & final-project/consumer-mobile-app/consumer-mobile-app/src/app/services/booking.service.ts                                                                                                  	|
+| Consumer mobile app 	| Booking Success Page 	| final-project/consumer-mobile-app/consumer-mobile-app/src/app/pages/booking-success                                                                                                                                                                                       	|
+| Provider mobile app 	| Login                	| final-project/provider-mobile-app/provider-mobile-app/src/app/pages/login & final-project/provider-mobile-app/provider-mobile-app/src/app/services/auth.service.ts                                                                                                        	|
+| Provider mobile app 	| Registration         	| final-project/provider-mobile-app/provider-mobile-app/src/app/pages/register & final-project/provider-mobile-app/provider-mobile-app/src/app/services/auth.service.ts                                                                                                     	|
+| Provider mobile app 	| Properties           	| final-project/provider-mobile-app/provider-mobile-app/src/app/pages/properties & final-project/provider-mobile-app/provider-mobile-app/src/app/services/listing.service.ts                                                                                                	|
+| Provider mobile app 	| Property Details     	| final-project/provider-mobile-app/provider-mobile-app/src/app/pages/property-details & final-project/provider-mobile-app/provider-mobile-app/src/app/services/listing.service.ts & final-project/provider-mobile-app/provider-mobile-app/src/app/services/auth.service.ts 	|
+| Provider mobile app 	| Create-property      	| final-project/provider-mobile-app/provider-mobile-app/src/app/pages/create-property & final-project/provider-mobile-app/provider-mobile-app/src/app/services/listing.service.ts                                                                                           	|
+| Provider mobile app 	| Booking-requests     	| final-project/provider-mobile-app/provider-mobile-app/src/app/pages/booking-requests & final-project/provider-mobile-app/provider-mobile-app/src/app/services/listing.service.ts                                                                                          	|
+| Provider mobile app 	| User Profile         	| final-project/provider-mobile-app/provider-mobile-app/src/app/pages/user & final-project/provider-mobile-app/provider-mobile-app/src/app/services/auth.service.ts                                                                                                         	|
+| API                 	| Users                	| final-project/API/API/src/api/user-routes.js & final-project/API/API/src/models/user.js & final-project/API/API/src/services/user-service.js                                                                                                                              	|
+| API                 	| Listings             	| final-project/API/API/src/api/listing-routes.js & final-project/API/API/src/models/listing.js & final-project/API/API/src/services/listing-service.js                                                                                                                     	|
+| API                 	| Bookings             	| final-project/API/API/src/api/booking-routes.js & final-project/API/API/src/models/booking.js & final-project/API/API/src/services/booking-service.js                                                                                                                     	|
+| API                 	| Authentication       	| final-project/API/API/src/api/auth-routes.js & final-project/API/API/src/services/auth-service.js                                                                                                                                                                         	|
+| Admin panel         	| Users                	| final-project/admin-panel/admin-panel/src/app/components/user & final-project/admin-panel/admin-panel/src/app/models/user.ts & final-project/admin-panel/admin-panel/src/app/services/user.service.ts                                                                     	|
+| Admin panel         	| Service-Providers    	| final-project/admin-panel/admin-panel/src/app/components/service-providers & final-project/admin-panel/admin-panel/src/app/models/service-providers.ts & final-project/admin-panel/admin-panel/src/app/services/service-providers.service.ts                              	|
+| Admin panel         	| Bookings             	| final-project/admin-panel/admin-panel/src/app/components/booking-page & final-project/admin-panel/admin-panel/src/app/models/booking.ts & final-project/admin-panel/admin-panel/src/app/services/booking.service.ts                                                       	|
+| Admin panel         	| Listings             	| final-project/admin-panel/admin-panel/src/app/components/listings-page & final-project/admin-panel/admin-panel/src/app/models/listing.ts & final-project/admin-panel/admin-panel/src/app/services/listing.service.ts                                                      	|
+| Admin panel         	| Dashboard            	| final-project/admin-panel/admin-panel/src/app/components/dashboard                                                                                                                                                                                                        	|
 
