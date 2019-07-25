@@ -26,21 +26,21 @@ export class PropertyDetailsPage implements OnInit {
     this.user = this.authService.getUser();
   }
 
-  
-  goToUser(){
+
+  goToUser() {
     this.navCtrl.navigateForward('user');
   }
 
 
-  goToProperties(){
+  goToProperties() {
     this.navCtrl.navigateForward('properties');
   }
 
-  goToBookings(){
+  goToBookings() {
     this.navCtrl.navigateForward('bookings');
   }
 
-  goToBookingSuccess(){
+  goToBookingSuccess() {
     this.navCtrl.navigateForward('booking-success')
   }
 
@@ -50,11 +50,8 @@ export class PropertyDetailsPage implements OnInit {
     this.booking.hostId = this.displayListing.hostId;
     this.booking.userId = this.user.id;
     console.log(this.booking);
-    //this.bookingService.invokeBookingCallback(this.booking);
     this.listingService.addBooking(this.booking).subscribe()
     this.goToBookingSuccess();
   }
-
-
 
 }

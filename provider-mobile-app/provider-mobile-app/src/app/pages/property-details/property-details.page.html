@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Property-Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+
+  <ion-card class="center" style="width:400px">
+    <img src="https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large">
+    <ion-card-content>
+      <h1 class="black">{{displayListing.title}}</h1>
+      <h2 class="black">Location: {{displayListing.location}}</h2>
+      <h3 class="black">Price: ${{displayListing.pricePerNight}} per night</h3>
+      <p class="black"> Description: {{displayListing.description}}</p>
+      <hr>
+      <h2 class="black">Edit Information</h2>
+        <ion-item center expand=full>
+          <ion-input type="text" placeholder="Title" [(ngModel)]="title"></ion-input> <br>
+        </ion-item>
+        <ion-item center expand=full>
+          <ion-input type="text" placeholder="Location" [(ngModel)]="location"></ion-input> <br>
+        </ion-item>
+        <ion-item center expand=full>
+          <ion-input type="text" placeholder="Description" [(ngModel)]="description"></ion-input> <br>
+        </ion-item>
+        <ion-item center expand=full>
+          <ion-input type="text" placeholder="Number of Guests" [(ngModel)]="numberOfPeople"></ion-input> <br>
+        </ion-item>
+        <ion-item center expand=full>
+          <ion-input type="text" placeholder="Price Per Night" [(ngModel)]="pricePerNight"></ion-input> <br>
+        </ion-item>
+  
+        <ion-item center expand=full>
+        <ion-button center expand=full color=danger (click)="updateProperty()">Edit Listing</ion-button>
+        <ion-button center expand=full color=danger (click)="deleteProperty()">Delete Listing</ion-button>
+        <ion-button center expand=full color=danger (click)="goToBookingRequests()">Requests</ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <div class="center" >
+    <ion-button (click)="goToUser()"><ion-icon name="person"></ion-icon>Profile</ion-button>
+    <ion-button (click)="goToProperties()"><ion-icon name="globe"></ion-icon>My Listings</ion-button>
+    </div>
+
+
+</ion-content>

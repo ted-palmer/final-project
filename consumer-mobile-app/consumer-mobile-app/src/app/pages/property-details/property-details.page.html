@@ -1,15 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>property-details</ion-title>
+    <ion-title class="title">Airbnb</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- <h1>{{displayListing.title}}</h1>
-<h2>{{displayListing.location}}</h2>
-{{displayListing.location}}
-{{displayListing.email}}
-{{displayListing.description}} -->
 
   <ion-card class="center" style="width:500px">
     <img src="https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large">
@@ -18,38 +13,31 @@
       <h2 class="black">Location: {{displayListing.location}}</h2>
       <h3 class="black">Price: ${{displayListing.pricePerNight}} per night</h3>
       <p class="black"> Description: {{displayListing.description}}</p>
-        <ion-item center expand=full>
-          <ion-input type="text" placeholder="Start Date" [(ngModel)] = "booking.dateStart"></ion-input> <br>
-        </ion-item>
-        <ion-item center expand=full>
-          <ion-input type="text" placeholder="End Date" [(ngModel)] = "booking.dateEnd"></ion-input> <br>
-        </ion-item>
-        <ion-item center expand=full>
+      <ion-item center expand=full>
+        <ion-input type="text" placeholder="Start Date" [(ngModel)]="booking.dateStart"></ion-input> <br>
+      </ion-item>
+      <ion-item center expand=full>
+        <ion-input type="text" placeholder="End Date" [(ngModel)]="booking.dateEnd"></ion-input> <br>
+      </ion-item>
+      <ion-item center expand=full>
         <ion-button center expand=full color=danger (click)="addBooking()">Add Booking</ion-button>
       </ion-item>
     </ion-card-content>
   </ion-card>
 
+  <br>
+  <br>
 
-  <!-- Tab Bar -->
-  <ion-tabs class="fixed">
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button (click)="goToUser()">
-        <ion-icon name="person"></ion-icon>
-        <ion-label>Profile</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button (click)="goToProperties()">
-        <ion-icon name="globe"></ion-icon>
-        <ion-label>Listings</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button (click)="goToBookings()">
-        <ion-icon name="book"></ion-icon>
-        <ion-label>Bookings</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-
+  <div class="center">
+    <ion-button (click)="goToUser()">
+      <ion-icon name="person"></ion-icon>Profile
+    </ion-button>
+    <ion-button (click)="goToProperties()">
+      <ion-icon name="globe"></ion-icon>Explore
+    </ion-button>
+    <ion-button (click)="goToBookings()">
+      <ion-icon name="book"></ion-icon>Bookings
+    </ion-button>
+  </div>
 
 </ion-content>

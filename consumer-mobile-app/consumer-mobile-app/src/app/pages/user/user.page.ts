@@ -14,12 +14,8 @@ export class UserPage implements OnInit {
   public displayUser: User = new User;
   public email: string;
 
-  constructor(private navCtrl: NavController, private authService: AuthService) { 
-    // this.email = this.authService.getGlobalEmail();
-    // console.log(this.email);
-    // this.authService.getUserByEmail(this.authService.globalEmail).subscribe((response) => {
-    //   this.authService.setUser(response);
-  // });
+  constructor(private navCtrl: NavController, private authService: AuthService) {
+
   }
 
 
@@ -28,11 +24,11 @@ export class UserPage implements OnInit {
     console.log(this.displayUser);
   }
 
-  goToBookings(){
+  goToBookings() {
     this.navCtrl.navigateForward('bookings');
   }
 
-  goToProperties(){
+  goToProperties() {
     this.navCtrl.navigateForward('properties');
   }
 

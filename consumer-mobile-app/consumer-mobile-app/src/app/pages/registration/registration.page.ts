@@ -38,7 +38,7 @@ export class RegistrationPage implements OnInit {
           this.addUser = response[0];
           console.log("AddUser: " + this.addUser);
           this.authService.setUser(this.addUser);
-
+          this.bookingService.setUser();
           this.navCtrl.navigateForward("properties");
         })
       }

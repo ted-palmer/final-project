@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>create-property</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+
+  <ion-card class="ion-card">
+    <ion-card-header>
+      <ion-card-title>Property Information</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input type="text" placeholder="Title" [(ngModel)]="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Location" [(ngModel)]="location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Description" [(ngModel)]="description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Number of People" [(ngModel)]="numberOfPeople"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Price Per Night" [(ngModel)]="pricePerNight"></ion-input>
+      </ion-item>
+      <br>
+      <div>
+        <ion-button center expand=full color="danger" (click)="addProperty()">Create Listing</ion-button>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+
+
+  <div class="center">
+    <ion-button (click)="goToUser()">
+      <ion-icon name="person"></ion-icon>Profile
+    </ion-button>
+    <ion-button (click)="goToProperties()">
+      <ion-icon name="globe"></ion-icon>My Listings
+    </ion-button>
+  </div>
+
+</ion-content>

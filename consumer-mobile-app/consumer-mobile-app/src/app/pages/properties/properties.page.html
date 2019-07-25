@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>properties</ion-title>
+    <ion-title class="title">Airbnb</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,99 +8,37 @@
 <ion-content>
   <h1>Explore</h1>
 
-  
-
-<!-- <ion-infinite-scroll class="ion-scroll" scrollX="true" direction="x"> -->
-  <!-- <ion-list *ngFor="let listing of listing">
-    <ion-row>
-    <ion-card>
-      <ion-card-content>
-        <ion-card-title>
-          {{listing.name}}
-        </ion-card-title>
-        {{listing.location}} <br>
-        Price: {{listing.price}}
-      </ion-card-content>
-    </ion-card>
-  </ion-row>
-  </ion-list> -->
-<!-- </ion-infinite-scroll> -->
-
-<!-- 
-  <ion-list center class="list" *ngFor="let listing of listing">
-      <ion-row center>
-        <ion-card>
-              <img style="width: 1000px; height: 600px" src={{listing.imgUrl}} />
-              <ion-card-header>
-                <ion-card-title>{{listing.name}}</ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                {{listing.location}} <br>
-                Price: {{listing.price}}
-              </ion-card-content>
-        </ion-card>
-    </ion-row>
-  </ion-list> -->
-
-  <!-- <ion-card style="width: 600px; height: auto" *ngFor="let listing of listing">
-    <img src="{{listing.imgUrl}}"/>
-      <ion-grid>
-        <ion-row> 
-          <ion-col>
-            <ion-card-subtitle>{{listing.location}}</ion-card-subtitle>
-            <ion-card-title>{{listing.name}}</ion-card-title>
-          </ion-col>
-          <ion-col>
-            <ion-card-title>Price Per Night: {{listing.price}}</ion-card-title>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-  </ion-card> -->
-
-
   <ion-grid class="listing-grid">
     <ion-row>
       <ion-col *ngFor="let listing of listing" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3>
         <ion-card>
-          <img src="https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large" class="listing-image">
+          <img src="https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large"
+            class="listing-image">
           <ion-card-content>
             <h3 class="black-text">{{listing.location}}</h3>
             <h1 text-capitalize class="black-text">{{listing.title}}</h1>
             <h3 class="center">${{listing.pricePerNight}} per night</h3>
             <ion-item center expand=full>
-                <ion-button center (click)="goToPropertyDetails(listing)" expand=full color=danger>Details</ion-button>
+              <ion-button center (click)="goToPropertyDetails(listing)" expand=full color=danger>Details</ion-button>
             </ion-item>
-            <!-- <p>{{listing.description}}</p> -->
-            <!-- <ion-button (click)="goToPropertyDetails()" expand=full color=danger>Details</ion-button> -->
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  
-
- <!-- Tab Bar -->
- <ion-tabs class="fixed">
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button (click)="goToUser()">
-        <ion-icon name="person"></ion-icon>
-        <ion-label>Profile</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button>
-        <ion-icon name="globe"></ion-icon>
-        <ion-label>Listings</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button (click)="goToBookings()">
-        <ion-icon name="book"></ion-icon>
-        <ion-label>Bookings</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
 
 
-  
+  <div class="center">
+    <ion-button (click)="goToUser()">
+      <ion-icon name="person"></ion-icon>Profile
+    </ion-button>
+    <ion-button>
+      <ion-icon name="globe"></ion-icon>Explore
+    </ion-button>
+    <ion-button (click)="goToBookings()">
+      <ion-icon name="book"></ion-icon>Bookings
+    </ion-button>
+  </div>
 
 </ion-content>

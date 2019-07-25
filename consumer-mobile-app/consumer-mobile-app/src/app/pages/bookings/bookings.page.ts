@@ -14,9 +14,8 @@ export class BookingsPage implements OnInit {
   accepted: any;
   rejected: any;
 
-  constructor(private navCtrl: NavController, private bookingService: BookingService) { 
+  constructor(private navCtrl: NavController, private bookingService: BookingService) {
 
-      //bookingService.setBookingCallback(this.addBookings);
   }
 
   ngOnInit() {
@@ -28,25 +27,18 @@ export class BookingsPage implements OnInit {
     this.bookingService.getBookingsAccepted().subscribe((response) => {
       this.accepted = response;
     });
-    
+
     this.bookingService.getBookingsRejected().subscribe((response) => {
       this.rejected = response;
     });
   }
 
-  // addBookings = (booking: Booking) => {
-  //   this.pending.push(booking);
-  // }
 
-
-  
-
-
-  goToProperties(){
+  goToProperties() {
     this.navCtrl.navigateForward('properties');
   }
 
-  goToUser(){
+  goToUser() {
     this.navCtrl.navigateForward('user');
   }
 

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+
+  <ion-card class="ion-card">
+    <ion-card-header>
+      <ion-card-title>Registration Information</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input type="text" placeholder="First Name" [(ngModel)]="addUser.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Last Name" [(ngModel)]="addUser.surname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Email" [(ngModel)]="addUser.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Password" type="password" [(ngModel)]="addUser.password"></ion-input>
+      </ion-item>
+      <br>
+      <div>
+        <ion-button center expand=full color="danger" (click)="registerNewUser()">Register</ion-button>
+        <ion-button center expand=full color="danger" (click)="alreadyHaveAccount()">I already have an account</ion-button>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

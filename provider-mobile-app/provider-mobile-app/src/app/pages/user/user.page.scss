@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+}
+
+
+.email{
+    color: gray;
+}
+
+.avatar{
+    margin: auto;
+    size: large;
+    width: 200px !important; 
+    height : 200px !important;
+ }
+
+ .item-avatar  {     
+    width:100% !important;  
+    height : 100% !important;  
+    max-width: 400px !important;  //any size
+    max-height: 400px !important; //any size 
+    }
+
+ .description {
+     font-size: 28px;
+     margin-left: 15%;
+     margin-right: 15%;
+ }

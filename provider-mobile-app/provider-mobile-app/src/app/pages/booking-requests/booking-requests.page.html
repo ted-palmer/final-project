@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Booking Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <h1 class="center"><u>Pending</u></h1>
+  <!-- <ion-list *ngFor="let booking of pending">
+    <ion-item>
+      
+    </ion-item>
+  </ion-list> -->
+
+
+  <ion-list>
+    <ion-card *ngFor="let booking of pending">
+      <ion-item>id: {{booking.id}}</ion-item>
+      <ion-item>Start Date: {{booking.dateStart}}</ion-item>
+      <ion-item>Date End: {{booking.dateEnd}}</ion-item>
+      <ion-item>Listing Id: {{booking.listingId}}</ion-item>
+      <ion-item>Status: {{booking.status}}</ion-item>
+      <ion-item>User Id: {{booking.userId}}</ion-item>
+      <ion-item>
+        <ion-button center (click)="acceptRequest(booking)" expand=full color=danger>Accept</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button center (click)="rejectRequest(booking)" expand=full color=danger>Reject</ion-button>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+
+
+
+  <h1 class="center"><u>Accepted</u></h1>
+  <ion-list>
+      <ion-card *ngFor="let booking of accepted">
+        <ion-item>id: {{booking.id}}</ion-item>
+        <ion-item>Start Date: {{booking.dateStart}}</ion-item>
+        <ion-item>Date End: {{booking.dateEnd}}</ion-item>
+        <ion-item>Listing Id: {{booking.listingId}}</ion-item>
+        <ion-item>Status: {{booking.status}}</ion-item>
+        <ion-item>User Id: {{booking.userId}}</ion-item>
+        <ion-item>
+          <ion-button center (click)="acceptRequest(booking)" expand=full color=danger>Accept</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button center (click)="rejectRequest(booking)" expand=full color=danger>Reject</ion-button>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+
+
+  <h1 class="center"><u>Rejected</u></h1>
+  <ion-list>
+      <ion-card *ngFor="let booking of rejected">
+        <ion-item>id: {{booking.id}}</ion-item>
+        <ion-item>Start Date: {{booking.dateStart}}</ion-item>
+        <ion-item>Date End: {{booking.dateEnd}}</ion-item>
+        <ion-item>Listing Id: {{booking.listingId}}</ion-item>
+        <ion-item>Status: {{booking.status}}</ion-item>
+        <ion-item>User Id: {{booking.userId}}</ion-item>
+        <ion-item>
+          <ion-button center (click)="acceptRequest(booking)" expand=full color=danger>Accept</ion-button>
+          <ion-button center (click)="rejectRequest(booking)" expand=full color=danger>Reject</ion-button>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+
+<ion-button size=large (click)="backToDetails()" expand = full color = danger>Back to Details</ion-button>
+</ion-content>
