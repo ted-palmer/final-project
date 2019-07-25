@@ -6,5 +6,6 @@ export class Listing {
     public numberOfPeople: number;
     public pricePerNight: number;
     public hostId: number;
+    public imgUrl: string;
     
 }

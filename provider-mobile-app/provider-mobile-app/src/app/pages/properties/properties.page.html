@@ -13,7 +13,7 @@
     <ion-row>
       <ion-col *ngFor="let listing of listing" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3>
         <ion-card>
-          <img src="https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large" class="listing-image">
+          <img src={{listing.imgUrl}} class="listing-image">
           <ion-card-content>
             <h3 class="black-text">{{listing.location}}</h3>
             <h1 text-capitalize class="black-text">{{listing.title}}</h1>

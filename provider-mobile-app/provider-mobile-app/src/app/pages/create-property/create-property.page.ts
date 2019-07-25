@@ -17,6 +17,7 @@ export class CreatePropertyPage implements OnInit {
   public description: string;
   public numberOfPeople: number;
   public pricePerNight: number;
+  public imgUrl: string;
 
   constructor(private navCtrl: NavController, private listingService: ListingService) { }
 
@@ -30,6 +31,7 @@ export class CreatePropertyPage implements OnInit {
     this.property.description = this.description;
     this.property.numberOfPeople = this.numberOfPeople;
     this.property.pricePerNight = this.pricePerNight;
+    this.property.imgUrl = this.imgUrl;
     this.property.hostId = this.listingService.getHostId();
     this.listingService.createListing(this.property).subscribe();
     this.goToProperties();

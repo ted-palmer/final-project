@@ -9,6 +9,7 @@ var Listing = (listing) => {
     this.numberOfPeople = listing.numberOfPeople;
     this.pricePerNight = listing.pricePerNight;
     this.hostId = listing.hostId;
+    this.imgUrl = listing.imgUrl;
 
 };
 
@@ -26,7 +27,7 @@ Listing.createListing = (newListing, result) => {
 
  //update listing
  Listing.updateListing = (newListing, result) => {
-  mysqlConn.query("UPDATE listings SET title = ?, location = ?, description = ?, numberOfPeople = ?, pricePerNight = ?, hostId = ? WHERE id = ?", [newListing.title, newListing.location, newListing.description, newListing.numberOfPeople, newListing.pricePerNight, newListing.hostId, newListing.id], (err, res) => {
+  mysqlConn.query("UPDATE listings SET title = ?, location = ?, description = ?, numberOfPeople = ?, pricePerNight = ?, hostId = ?, imgUrl = ? WHERE id = ?", [newListing.title, newListing.location, newListing.description, newListing.numberOfPeople, newListing.pricePerNight, newListing.hostId, newListing.imgUrl, newListing.id], (err, res) => {
       if (err) {
           console.log("error: ", err);
           result(err, null);
@@ -49,34 +50,6 @@ Listing.removeListing = (listingId, result) => {
     }
   });
 };
-
-
-
-// User.findUserByName = (userName, result) => {
-//     mysqlConn.query("Select * from user where name = ?", userName, (err, res) => {
-//         if (err) {
-//         console.log("error: ", err);
-//         result(err, null);
-//         } else {
-//         console.log(res);
-//         result(null, res);
-//         }
-//     });
-// };
-
-
-// //adding this
-// User.findUserByEmail = (userEmail, result) => {
-//     mysqlConn.query("Select * from user where email = ?", userEmail, (err, res) => {
-//         if (err) {
-//         console.log("error: ", err);
-//         result(err, null);
-//         } else {
-//         console.log(res);
-//         result(null, res);
-//         }
-//     });
-// };
 
 
 
@@ -106,8 +79,6 @@ Listing.findListingById = (listingId, result) => {
     });
 };
 
-
-//update listing
 
 
 module.exports = Listing;

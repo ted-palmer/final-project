@@ -25,6 +25,7 @@ export class PropertyDetailsPage implements OnInit {
   public description: string;
   public numberOfPeople: number;
   public pricePerNight: number;
+  public imgUrl: string;
 
   constructor(private navCtrl: NavController, private listingService: ListingService, private authService: AuthService, private bookingService: BookingService) { }
 
@@ -41,6 +42,7 @@ export class PropertyDetailsPage implements OnInit {
     this.property.numberOfPeople = this.numberOfPeople;
     this.property.pricePerNight = this.pricePerNight;
     this.property.hostId = this.listingService.getHostId();
+    this.property.imgUrl = this.imgUrl;
     this.property.id = this.listingService.getDetailListing().id;
     this.listingService.updateListing(this.property).subscribe();
     this.goToProperties();
@@ -50,7 +52,6 @@ export class PropertyDetailsPage implements OnInit {
   deleteProperty(){
     this.listingService.deleteListing(this.listingService.getDetailListing().id).subscribe(() => console.log("user deleted"));;
   }
-
 
   
   goToUser(){
@@ -73,18 +74,6 @@ export class PropertyDetailsPage implements OnInit {
   goToBookingSuccess(){
     this.navCtrl.navigateForward('booking-success')
   }
-
-
-  // addBooking() {
-  //   this.booking.listingId = this.displayListing.id;
-  //   this.booking.hostId = this.displayListing.hostId;
-  //   this.booking.userId = this.user.id;
-  //   console.log(this.booking);
-  //   //this.bookingService.invokeBookingCallback(this.booking);
-  //   this.listingService.addBooking(this.booking).subscribe()
-  //   this.goToBookingSuccess();
-  // }
-
 
 
 }

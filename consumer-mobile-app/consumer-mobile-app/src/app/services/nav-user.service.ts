@@ -13,15 +13,4 @@ export class NavUserService {
   constructor(private http: HttpClient) { }
 
   
-  
-
-  // public setUser(user: any) {
-  //   this.user = user;
-  // }
-
-  // public getUser(): User{
-  //   return this.user;
-  // }
-
-
 }
